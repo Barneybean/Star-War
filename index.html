@@ -8,17 +8,64 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script type="text/script" src="assets/javascript/game.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
 </head>
-  <body>
-
-    
-      
+<body>
+    <header>
+        Star War RPG!
+    </header>
+    <br><br>
+    <h4>Select Your Hero To Start</h4>
+    <div class="selectionContainer">
+        <div id="obiwan" class="heroContainer">
+            <p>Obi-Wan Kenobi</p>
+            <img src="assets/images/obiwan.jpg">
+            <p>Hp: <span id="obiwanHp"></span> AP: <span id="obiwanAp"></span></p>
+        </div>
+        <div id="skywalker" class="heroContainer">
+            <p>Luke Skywalker</p>
+            <img src="assets/images/skywalker.jpeg">
+            <p>Hp: <span id="skywalkerHp"></span> AP: <span id="skywalkerAp"></span></p>
+        </div>
+        <div id="darthVader" class="heroContainer">
+            <p>Darth Vader</p>
+            <img src="assets/images/darthvader.jpeg">
+            <p>Hp: <span id="darthVaderHp"></span> AP: <span id="darthSidiousAp"></span></p>
+        </div>
+        <div id="darthSidious" class="heroContainer">
+            <p>Darth Sidious</p>
+            <img src="assets/images/darthsidious.jpeg">
+            <p>Hp: <span id="darthSidiousHp"></span> AP: <span id="darthSidiousAp"></span></p>
+        </div>
+    </div>
+    <br><br>
+    <div class="selectionContainer">
+        <h4>your Hero:</h4>
+        <div id="yourHero"></div>
+    </div>
+    <br><br>
+    <div class="selectionContainer">
+        <h4>Enemies Available To Attack</h4>
+        <div id="availableEnemies"></div>
+    </div>
+    <br><br>
+    <div class="fightContainer">
+        <h4>Fight Action</h4>
+        <button id="fightBtn">Attack</button>
+    </div>
+    <br><br>
+    <div class="selectionContainer">
+        <h4>Defender</h4>
+        <div id="defender"></div>
+    </div>
+    <br>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>
