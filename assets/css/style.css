@@ -36,6 +36,18 @@ img{
     margin: 4px auto;
 }
 
+#yourcontainer{
+    display: block;
+}
+
+#defendercontainer{
+    display: block;
+}
+
+#vslogo{
+    display: block;
+}
+
 #fightBtn{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -44,6 +56,11 @@ img{
 }
 
 #notice{
-    color:lightsalmon;
-    font-size:30px;
+    color:lightskyblue;
+    font-size:15px;
+    line-height: 15px;
 }
+
+/* #button{
+    display: none;
+} */

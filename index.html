@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>The Star War Game</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,48 +19,53 @@
     <br><br>
     <h4>Select Your Hero To Start</h4>
     <div id="selectionContainer" class="container-holder">
-        <div id="obiwan" class="heroContainer herostyle" hp=120 ap=10 counterap=15>
-            <p>Obi-Wan Kenobi</p>
+        <div id="obiwan" class="heroContainer herostyle" name="Obi-Wan Kenobi" hp=120 ap=10 counterap=15>
+            <p id="hero">Obi-Wan Kenobi</p>
             <img class="heroimg" src="assets/images/obiwan.jpeg">
-            <p>Hp: <span id="obiwanHp">120</span> AP: <span id="obiwanAp">10</span></p>
+            <p>Hp: <span class="hp" id="obiwanHp">120</span> AP: <span class="ap" id="obiwanAp">10</span></p>
         </div>
-        <div id="skywalker" class="heroContainer herostyle" hp=100 ap=8 counterap=17>
-            <p>Luke Skywalker</p>
+        <div id="skywalker" class="heroContainer herostyle" name="Luke Skywalker" hp=100 ap=8 counterap=17>
+            <p id="hero">Luke Skywalker</p>
             <img class="heroimg" src="assets/images/skywalker.jpeg">
-            <p>Hp: <span id="skywalkerHp">100</span> AP: <span id="skywalkerAp">8</span></p>
+            <p>Hp: <span class="hp" id="skywalkerHp">100</span> AP: <span class="ap" id="skywalkerAp">8</span></p>
         </div>
-        <div id="darthVader" class="heroContainer herostyle" hp=180 ap=10 counterap=25>
-            <p>Darth Vader</p>
+        <div id="darthVader" class="heroContainer herostyle" name="Darth Vader" hp=180 ap=10 counterap=25>
+            <p id="hero">Darth Vader</p>
             <img class="heroimg" src="assets/images/darthvader.jpeg">
-            <p>Hp: <span id="darthVaderHp">180</span> AP: <span id="darthSidiousAp">10</span></p>
+            <p>Hp: <span class="hp" id="darthVaderHp">180</span> AP: <span class="ap" id="darthSidiousAp">10</span></p>
         </div>
-        <div id="darthSidious" class="heroContainer herostyle" hp=150 ap=8 counterap=20>
-            <p>Darth Sidious</p>
+        <div id="darthSidious" class="heroContainer herostyle" name="Darth Sidious" hp=150 ap=8 counterap=20>
+            <p id="hero">Darth Sidious</p>
             <img class="heroimg" src="assets/images/darthsidious.jpeg">
-            <p>Hp: <span id="darthSidiousHp">150</span> AP: <span id="darthSidiousAp">8</span></p>
+            <p>Hp: <span class="hp" id="darthSidiousHp">150</span> AP: <span class="ap" id="darthSidiousAp">8</span></p>
         </div>
     </div>
+    <div class="fightContainer">
+        <h4>Fight Action</h4>
+        <button id="fightBtn">Attack</button>
+    </div> 
+    <br>
+    <div class="conbat-area"></div>
+        <div id="yourContainer" class="container-holder">
+            <h4>Your Hero:</h4>
+            <div id="yourHero"></div>
+        </div>
+        <br>
+        <h1 id="vslogo">V.S</h1>
+        <br>
+        <div id="defenderContainer" class="container-holder">
+            <h4>Defender</h4>
+            <div id="defender"></div>
+        </div>
+    </div>  
     <br><br>
-    <div id="yourContainer" class="container-holder">
-        <h4>Your Hero:</h4>
-        <div id="yourHero"></div>
-    </div>
-    <br><br>
+    <div id="notice"></div>  
+    <br>
     <div id="enemyContainer" class="container-holder">
         <h4>Enemies Available To Attack</h4>
         <div id="availableEnemies"></div>
     </div>
     <br><br>
-    <div class="fightContainer">
-        <h4>Fight Action</h4>
-        <button id="fightBtn">Attack</button>
-    </div>
-    <br><br>
-    <div id="defenderContainer" class="container-holder">
-        <h4>Defender</h4>
-        <div id="defender"></div>
-    </div>
-    <br><br>
-    <div id="notice"></div>   
+    <button id="reset">Reset Game</button>
 </body>
 </html>
