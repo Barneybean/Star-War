@@ -2,7 +2,7 @@ body{
     font-family: 'Press Start 2P', cursive;
     color: white;
     background: url(../images/background.jpg);
-    
+    padding-left:1%;
 }
 
 header{
@@ -21,7 +21,7 @@ p{
     text-align: center;
 }
 
-.heroContainer{
+.herostyle{
     height: 160px;
     width: 170px;
     margin: 10px;
@@ -34,4 +34,16 @@ img{
     width: 130px;
     display: block;
     margin: 4px auto;
+}
+
+#fightBtn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+}
+
+#notice{
+    color:lightsalmon;
+    font-size:30px;
 }

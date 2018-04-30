@@ -5,14 +5,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script type="text/script" src="assets/javascript/game.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <!-- jQuery and javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
 <body>
     <header>
@@ -20,35 +18,35 @@
     </header>
     <br><br>
     <h4>Select Your Hero To Start</h4>
-    <div class="selectionContainer">
-        <div id="obiwan" class="heroContainer">
+    <div id="selectionContainer" class="container-holder">
+        <div id="obiwan" class="heroContainer herostyle" hp=120 ap=10 counterap=15>
             <p>Obi-Wan Kenobi</p>
-            <img src="assets/images/obiwan.jpg">
-            <p>Hp: <span id="obiwanHp"></span> AP: <span id="obiwanAp"></span></p>
+            <img class="heroimg" src="assets/images/obiwan.jpeg">
+            <p>Hp: <span id="obiwanHp">120</span> AP: <span id="obiwanAp">10</span></p>
         </div>
-        <div id="skywalker" class="heroContainer">
+        <div id="skywalker" class="heroContainer herostyle" hp=100 ap=8 counterap=17>
             <p>Luke Skywalker</p>
-            <img src="assets/images/skywalker.jpeg">
-            <p>Hp: <span id="skywalkerHp"></span> AP: <span id="skywalkerAp"></span></p>
+            <img class="heroimg" src="assets/images/skywalker.jpeg">
+            <p>Hp: <span id="skywalkerHp">100</span> AP: <span id="skywalkerAp">8</span></p>
         </div>
-        <div id="darthVader" class="heroContainer">
+        <div id="darthVader" class="heroContainer herostyle" hp=180 ap=10 counterap=25>
             <p>Darth Vader</p>
-            <img src="assets/images/darthvader.jpeg">
-            <p>Hp: <span id="darthVaderHp"></span> AP: <span id="darthSidiousAp"></span></p>
+            <img class="heroimg" src="assets/images/darthvader.jpeg">
+            <p>Hp: <span id="darthVaderHp">180</span> AP: <span id="darthSidiousAp">10</span></p>
         </div>
-        <div id="darthSidious" class="heroContainer">
+        <div id="darthSidious" class="heroContainer herostyle" hp=150 ap=8 counterap=20>
             <p>Darth Sidious</p>
-            <img src="assets/images/darthsidious.jpeg">
-            <p>Hp: <span id="darthSidiousHp"></span> AP: <span id="darthSidiousAp"></span></p>
+            <img class="heroimg" src="assets/images/darthsidious.jpeg">
+            <p>Hp: <span id="darthSidiousHp">150</span> AP: <span id="darthSidiousAp">8</span></p>
         </div>
     </div>
     <br><br>
-    <div class="selectionContainer">
-        <h4>your Hero:</h4>
+    <div id="yourContainer" class="container-holder">
+        <h4>Your Hero:</h4>
         <div id="yourHero"></div>
     </div>
     <br><br>
-    <div class="selectionContainer">
+    <div id="enemyContainer" class="container-holder">
         <h4>Enemies Available To Attack</h4>
         <div id="availableEnemies"></div>
     </div>
@@ -58,14 +56,11 @@
         <button id="fightBtn">Attack</button>
     </div>
     <br><br>
-    <div class="selectionContainer">
+    <div id="defenderContainer" class="container-holder">
         <h4>Defender</h4>
         <div id="defender"></div>
     </div>
-    <br>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <br><br>
+    <div id="notice"></div>   
 </body>
 </html>
