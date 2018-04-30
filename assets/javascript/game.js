@@ -26,10 +26,10 @@ $(document).ready(function() {
     $(".heroContainer").on("click", function() {
         if (!isYourHeroChosen){ //if needs to be inside eventlistner
             yourHero=this;
-            yourHeroHp=parseInt($(this).attr("hp")); //cant use this.hp because js is not in html
+            yourHeroHp=parseInt($(this).attr("hp")); //cant use this.hp because js is not in html !!!!!!!!
             yourHeroAp=parseInt($(this).attr("ap"));// for combat calculation
             $("#yourHero").append(yourHero); //to move selected hero to Your Hero block
-            $(this).find("span.hp").addClass("theHeroHp"); //changeable ap for selected heroHp 
+            $(this).find("span.hp").addClass("theHeroHp"); //changeable ap for selected heroHp **************!!!!!!
             $(this).find("span.ap").addClass("theHeroAp");
             $(this).removeClass("heroContainer");// to remove class in chosen hero so it can not be selected again
             $("#availableEnemies").append($(".heroContainer")); //move the rest of heros to available area
@@ -51,7 +51,9 @@ $(document).ready(function() {
             $("#notice").empty();
             $("#fightBtn").on("click", function() {
                 defenderHp -= yourHeroAp;
-                yourHeroAp +=yourHeroAp; //yourHero's Ap will increase last ap after every attack
+                if (isDefenderChosen) {//unchange if no defender is selected
+                    yourHeroAp +=yourHeroAp; //yourHero's Ap will increase last ap after every attack
+                };
                 yourHeroHp -= defenderCounterAp;
                 $(".theHeroHp").html(yourHeroHp); //to display changed hp after attack
                 $(".theHeroAp").html(yourHeroAp); //same for ap
@@ -60,12 +62,20 @@ $(document).ready(function() {
                 console.log(yourHeroHp > 0 && defenderHp <= 0);
                 if (yourHeroHp > 0 && defenderHp <= 0) {
                     $("#notice").text("You have defeted "+defenderName+" choose another enemy to play.")
-                    $(".defender").remove(defender);
+                    $("#defender").empty();
+                    defenderCounterAp=0;
                     isDefenderChosen=false;
+                    console.log(yourHeroHp <= 0 && defenderHp > 0)
                 }
-                else if (yourHeroHp <= 0 && defenderHp > 0) {
+                else if (yourHeroHp <= 0 && defenderHp > 0)  {
                     $("#notice").html("You Lost! Click on reset Button to play again")
+                    $("#yourHero").empty();
+
                     // $("#reset").animate({display:"block"});
+                }
+                else if (yourHeroHp <= 0 && defenderHp <=0) {
+                    $("#notice").html("You Lost! Click on reset Button to play again")
+                    $("#yourHero").empty();
                 }
             })
         }
@@ -80,8 +90,8 @@ $(document).ready(function() {
         initialize();
     });
     
-    console.log();
-    // remove defender when defeated;
+    // console.log();
     // add music
     // add all defeated
+    // add yourHero back to top when reset
 });
