@@ -13,17 +13,15 @@ $(document).ready(function() {
     function initialize() {
         yourHeroAp="";
         yourHeroHp="";
-        defenderHp="";
         defenderCounterAp="";
         isYourHeroChosen=false;
         isDefenderChosen=false;
-        $("#selectionContainer").html($(".heroContainer"));
         $("#yourHero").empty();
         $("#notice").empty();
     }
-    initialize();
+    
     // select a hero  
-    $(".heroContainer").on("click", function() {
+    $(document).on("click", ".heroContainer", function() { //!!!!~~if initialed () at the bottom then the on click function don’t know what .heroContainer class is, so write it this way to target html document first.
         if (!isYourHeroChosen){ //if needs to be inside eventlistner
             yourHero=this;
             yourHeroHp=parseInt($(this).attr("hp")); //cant use this.hp because js is not in html !!!!!!!!
@@ -51,47 +49,51 @@ $(document).ready(function() {
             $("#notice").empty();
             $("#fightBtn").on("click", function() {
                 defenderHp -= yourHeroAp;
+                yourHeroHp -= defenderCounterAp;
                 if (isDefenderChosen) {//unchange if no defender is selected
                     yourHeroAp +=yourHeroAp; //yourHero's Ap will increase last ap after every attack
                 };
-                yourHeroHp -= defenderCounterAp;
+                
                 $(".theHeroHp").html(yourHeroHp); //to display changed hp after attack
                 $(".theHeroAp").html(yourHeroAp); //same for ap
                 $(".theDefenderHp").html(defenderHp);
                 $("#notice").html("You attacked "+defenderName+" for "+ yourHeroAp + " damage."+"<br><br>"+defenderName+" attacked you back for "+defenderCounterAp+" damage."+"<br><br><br><br>")
-                console.log(yourHeroHp > 0 && defenderHp <= 0);
+                
+                
                 if (yourHeroHp > 0 && defenderHp <= 0) {
                     $("#notice").text("You have defeted "+defenderName+" choose another enemy to play.")
                     $("#defender").empty();
                     defenderCounterAp=0;
+                    defenderHp=$(this).attr("hp");
                     isDefenderChosen=false;
-                    console.log(yourHeroHp <= 0 && defenderHp > 0)
                 }
                 else if (yourHeroHp <= 0 && defenderHp > 0)  {
                     $("#notice").html("You Lost! Click on reset Button to play again")
                     $("#yourHero").empty();
-
                     // $("#reset").animate({display:"block"});
                 }
                 else if (yourHeroHp <= 0 && defenderHp <=0) {
                     $("#notice").html("You Lost! Click on reset Button to play again")
-                    $("#yourHero").empty();
+                    $("#yourContainer").empty();
+                    $("#defenderContainer").empty();
+                    $(this).attr("hp");
+                }
+
+                else if (yourHeroHp > 0 && $("#availableEnemies").html() =="") {
+                    $("#defenderContainer").html("<img src='assets/images/youwin.jpg' style='height:30%; width:30%'/>");
                 }
             })
         }
         else {
             $("#notice").text("No enemy is Chosen");
         }
-        
-        
     });
 
     $("#reset").on("click", function() {
-        initialize();
+        window.location.reload(); // reload page to reset
     });
-    
-    // console.log();
+
+    initialize();
     // add music
-    // add all defeated
-    // add yourHero back to top when reset
+    //try using object
 });
